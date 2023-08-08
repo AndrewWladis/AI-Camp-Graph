@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>replit</title>
+  <title>Average Perceptions of Different Road Signs in Percentage</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 
@@ -27,6 +27,9 @@
     {Sign: 'Yield', 'Average Perception': 94}
   ];
 
+  // Set colors for each column
+  var colors = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', '#8c564b', '#e377c2', '#7f7f7f', '#bcbd22', '#17becf'];
+
   // Create a bar chart
   var layout = {
     title: 'Average Perceptions of Different Road Signs in Percentage'
@@ -37,7 +40,10 @@
     y: data.map(entry => entry['Average Perception']),
     type: 'bar',
     text: data.map(entry => entry.Sign),
-    hoverinfo: 'y+text'
+    hoverinfo: 'y+text',
+    marker: {
+      color: colors // Assign colors to each bar
+    }
   }], layout);
 
 </script>

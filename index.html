@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div id="chart"></div>
+</body>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script>
+  // Data for the chart
+  var data = [
+    {Sign: 'All', 'Average Perception': 84},
+    {Sign: 'Detour', 'Average Perception': 81},
+    {Sign: 'Flagger Ahead', 'Average Perception': 58},
+    {Sign: 'Pedestrian', 'Average Perception': 86},
+    {Sign: 'Road Closed', 'Average Perception': 88},
+    {Sign: 'Road Work', 'Average Perception': 82},
+    {Sign: 'Speed Limit', 'Average Perception': 92},
+    {Sign: 'Stop', 'Average Perception': 91},
+    {Sign: 'Traffic Lights', 'Average Perception': 85},
+    {Sign: 'Yield', 'Average Perception': 94}
+  ];
+
+  // Create a bar chart
+  var layout = {
+    title: 'Average Perceptions of Different Road Signs in Percentage'
+  };
+
+  Plotly.newPlot('chart', [{
+    x: data.map(entry => entry.Sign),
+    y: data.map(entry => entry['Average Perception']),
+    type: 'bar',
+    text: data.map(entry => entry.Sign),
+    hoverinfo: 'y+text'
+  }], layout);
+
+</script>
+
+</html>
